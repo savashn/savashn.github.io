@@ -1,0 +1,297 @@
+@import "reset.css";
+
+body {
+    line-height: 1.5;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #004675, #1a7a4a);
+    animation: gradient 5s ease;
+    color: rgb(255, 255, 255);
+}
+
+.background {
+    background: linear-gradient(45deg, #004675, #1a7a4a);
+    background-size: 300% 300%;
+    animation: gradient 5s ease;
+    color: rgb(255, 255, 255);
+}
+
+header {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hello {
+    font-size: 4rem;
+    opacity: 0;
+    animation: fadeDown 1s forwards;
+    animation-delay: 0.3s;
+    width: 100%;
+}
+
+.name {
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeUp 1s forwards;
+    animation-delay: 0.3s;
+    text-align: center;
+}
+
+.abilities {
+    margin-top: 10rem;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+h4 {
+    margin-bottom: 1rem;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.images img {
+    width: 5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideFromRight 1s forwards;
+}
+
+.img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+img:hover {
+    filter: grayscale(0%);
+}
+
+.invertImg {
+    filter: invert(100%);
+    transition: filter 0.3s ease;
+}
+
+.invertImg:hover {
+    filter: invert(0%);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideFromLeft 1s forwards;
+}
+
+.tooltipText {
+    visibility: hidden;
+    width: auto;
+    font-size: 1rem;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 0.3rem 2rem;
+    border-radius: 4px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltipText {
+    visibility: visible;
+    opacity: 1;
+}
+
+.projects-header {
+    margin-top: 5rem;
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    font-size: 2.5rem;
+}
+
+.projects {
+    width: 20%;
+    text-align: left;
+    margin-top: -5rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeDown 1s forwards;
+    animation-delay: 0.3s;
+    padding: 2rem;
+}
+
+.projects li {
+    margin-bottom: 2rem;
+}
+
+.projects a {
+    text-decoration: underline;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.projects a:hover {
+    color: #1a7a4a;
+}
+
+footer {
+    margin: auto;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 4rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #1a7a4a;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+    .hello {
+        font-size: 3rem;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+
+    .images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        justify-items: center;
+    }
+
+    .images img {
+        width: 4rem;
+    }
+
+    .tooltip {
+        margin-bottom: 1rem;
+    }
+
+    /* .tooltipText {
+        margin-top: -1rem;
+    } */
+
+    .projects {
+        width: 80%;
+    }
+
+    .projects a {
+        font-size: 1.3rem;
+    }
+
+    .projects a:hover {
+        color: #05405c;
+    }
+
+    footer a:hover {
+        color: #05405c;
+    }
+
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 50% 50%;
+    }
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(80px);
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(100px);
+    }
+}
