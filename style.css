@@ -1,7 +1,6 @@
 @import "reset.css";
 
 body {
-    line-height: 1.5;
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -151,14 +150,23 @@ img:hover {
     margin-bottom: 2rem;
 }
 
-.projects a {
+.appLink {
     text-decoration: underline;
     color: whitesmoke;
     font-weight: bold;
 }
 
-.projects a:hover {
+.appLink:hover {
     color: #1a7a4a;
+}
+
+.githubLink {
+    text-decoration: underline;
+    color: whitesmoke;
+}
+
+.githubLink:hover {
+    color: darkblue;
 }
 
 footer {
@@ -202,10 +210,6 @@ footer a:hover {
     .tooltip {
         margin-bottom: 1rem;
     }
-
-    /* .tooltipText {
-        margin-top: -1rem;
-    } */
 
     .projects {
         width: 80%;
